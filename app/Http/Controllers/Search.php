@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Vacture;
 
 class Search extends Controller
 {
@@ -14,7 +15,7 @@ class Search extends Controller
      */
     public function index()
     {
-        $data = DB::select("select * from vactures");
+        $data = Vacture::all();
         return view('search.index', ['Vactures' => $data]);
     }
 
@@ -36,12 +37,15 @@ class Search extends Controller
      */
     public function store(Request $request)
     {
+        $vacture = new Vacture();
 
-        $insert = DB::table('vactures')->insertGetId(
-            ['Name' => request('naam'), 'Link' => request('linknaar'), 'Type' => request('soort')]
-        );
-        $data = DB::select("select * from vactures");
+        $vacture->Name = request('naam');
+        $vacture->Link = request('linknaar');
+        $vacture->Type = request('soort');
 
+        $vacture->save();
+
+        $data = Vacture::all();
         return view('search.index', ['Vactures' => $data]);
     }
 

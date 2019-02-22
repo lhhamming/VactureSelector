@@ -18,9 +18,9 @@
             </tr>
         @foreach ($Vactures as $Vacture)
         <tr>
-            <td>{{$Vacture->name}}</td>
-            <td>{{$Vacture->link}}</td>
-            <td>{{$Vacture->type}}</td>
+            <td>{{$Vacture->Name}}</td>
+            <td>{{$Vacture->Link}}</td>
+            <td>{{$Vacture->Type}}</td>
         </tr>
 
         @endforeach
