@@ -7,6 +7,7 @@
     <title>Create page!</title>
 </head>
 <body>
+<div class="alert"> {{$errormessage}}</div>
     <h1>Welcome to the create page</h1>
     <form action="/AddVac" method="POST">
         @csrf

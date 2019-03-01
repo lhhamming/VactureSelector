@@ -38,7 +38,9 @@ class Search extends Controller
     public function store(Request $request)
     {
         $vacture = new Vacture();
-
+        if( request('naam') == "" || request('linknaar') == "" || request('soort')){
+            return view('search.create')->with('errormessage', 'Er is 1 of meer velden niet ingevult.');
+        } 
         $vacture->Name = request('naam');
         $vacture->Link = request('linknaar');
         $vacture->Type = request('soort');
