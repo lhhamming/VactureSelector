@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title></title>
 </head>
         
@@ -12,9 +13,9 @@
     <a href="Search/create">Add an item to the dbd</a>
     <table>
             <tr>
-                <th>Naam Vacture</th>
-                <th>Link naar de Vacture</th>
-                <th>Soort</th>
+                <th>Naam Vacture | </th>
+                <th>Link naar de Vacture | </th>
+                <th>Soort | </th>
                 <th>Delete</th>
             </tr>
         @foreach ($Vactures as $Vacture)
