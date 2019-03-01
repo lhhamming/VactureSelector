@@ -20,8 +20,22 @@
         <tr>
             <td>{{$Vacture->Name}}</td>
             <td>{{$Vacture->Link}}</td>
-            <td>{{$Vacture->Type}}</td>
+            @switch($Vacture->Type)
+            @case("FSD")
+                <td>FullStack Developer</td>
+                @break
+            @case("FED")
+                <td>Front End Developer</td>
+                @break
+
+            @case("BED")
+                <td>Back End Developer</td>
+                @break
+            @default
+                
+        @endswitch
         </tr>
+        <!--$Vacture->Type == "FSD"-->
 
         @endforeach
     </table>

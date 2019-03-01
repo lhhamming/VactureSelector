@@ -7,13 +7,15 @@
     <title>Create page!</title>
 </head>
 <body>
-<div class="alert"> {{$errormessage}}</div>
     <h1>Welcome to the create page</h1>
+@if(!empty($errormessage))
+    <h1 style="color: red;"> {{ $errormessage }}</h1>
+@endif
     <form action="/AddVac" method="POST">
         @csrf
-        <input name="naam" type="text" placeholder="Functie van de baan"> <br> <br>
-        <input name="linknaar" type="text" placeholder="Link naar de vacature"><br><br>
-        <select name="soort">
+        <input name="naam" type="text" placeholder="Functie van de baan" required> <br> <br>
+        <input name="linknaar" type="text" placeholder="Link naar de vacature" required><br><br>
+        <select name="soort" required>
             <option value="FED">Front end</option>
             <option value="BED">Back end</option>
             <option value="FSD">Full stack developer</option>
