@@ -16,6 +16,7 @@ class Search extends Controller
     public function index()
     {
         $data = Vacture::all();
+        //dd($data);
         return view('search.index', ['Vactures' => $data]);
     }
 
@@ -93,6 +94,10 @@ class Search extends Controller
      */
     public function destroy($id)
     {
-        //
+        $vacture = Vacture::findOrFail($id);
+        $vacture->delete();
+        $data = Vacture::all();
+        return redirect('/Search');
+        return view('search.index', ['Vactures' => $data]);
     }
 }

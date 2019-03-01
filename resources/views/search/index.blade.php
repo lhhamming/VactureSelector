@@ -8,13 +8,14 @@
 </head>
         
 <body>
-    <h1>Welcome to search bank!</h1>
+    <h1>Welcome to the search bank!</h1>
     <a href="Search/create">Add an item to the dbd</a>
     <table>
             <tr>
                 <th>Naam Vacture</th>
                 <th>Link naar de Vacture</th>
                 <th>Soort</th>
+                <th>Delete</th>
             </tr>
         @foreach ($Vactures as $Vacture)
         <tr>
@@ -34,6 +35,14 @@
             @default
                 
         @endswitch
+        <td>
+            <form method="POST" action="Search/{{$Vacture->id}}">
+                @csrf
+                @method("DELETE")
+                <input type="submit" value="Delete from database" />
+            </form>
+        </td>
+        <td>
         </tr>
         <!--$Vacture->Type == "FSD"-->
 
