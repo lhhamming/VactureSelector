@@ -17,7 +17,10 @@ class Search extends Controller
     public function index()
     {
         $data = Vacture::all();
-        //dd($data);
+        if(Auth::guest())
+        {
+            return view('search.index', ['Vactures' => $data]);
+        }
         $name = Auth::user()->name;
         if($name == "Admin"){
             return view('search.index', ['Vactures' => $data])->with('AllowAdd', 'true');

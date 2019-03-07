@@ -22,7 +22,10 @@
                 <th>Naam Vacture | </th>
                 <th>Link naar de Vacture | </th>
                 <th>Soort | </th>
+                @if(!empty($AllowAdd))
                 <th>Delete</th>
+                @endif
+                
             </tr>
         @foreach ($Vactures as $Vacture)
         <tr>
@@ -42,6 +45,8 @@
             @default
                 
         @endswitch
+        @if(!empty($AllowAdd))
+
         <td>
             <form method="POST" action="Search/{{$Vacture->id}}">
                 @csrf
@@ -49,6 +54,7 @@
                 <input type="submit" value="Delete from database" />
             </form>
         </td>
+        @endif
         <td>
         </tr>
         <!--$Vacture->Type == "FSD"-->
