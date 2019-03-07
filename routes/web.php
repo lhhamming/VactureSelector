@@ -23,3 +23,10 @@ Route::get('/jobs', function(){
 */
 Route::resource('Search', 'Search');
 Route::post('AddVac', 'Search@store');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

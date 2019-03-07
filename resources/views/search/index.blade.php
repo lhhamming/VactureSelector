@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +10,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title></title>
 </head>
-        
+
 <body>
     <h1>Welcome to the search bank!</h1>
     <a href="Search/create">Add an item to the dbd</a>
@@ -51,4 +54,4 @@
     </table>
 </body>
 </html>
-
+@endsection
