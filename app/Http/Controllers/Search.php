@@ -32,7 +32,6 @@ class Search extends Controller
      */
     public function create()
     {
-            X
         $name = Auth::user()->name;
         if($name != "Admin")
         {
