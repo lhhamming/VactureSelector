@@ -13,7 +13,10 @@
 
 <body>
     <h1>Welcome to the search bank!</h1>
+@if(!empty($AllowAdd))
     <a href="Search/create">Add an item to the dbd</a>
+@endif
+    
     <table>
             <tr>
                 <th>Naam Vacture | </th>

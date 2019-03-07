@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Vacture;
+use Auth;
 
 class Search extends Controller
 {
@@ -17,6 +18,10 @@ class Search extends Controller
     {
         $data = Vacture::all();
         //dd($data);
+        $name = Auth::user()->name;
+        if($name == "Admin"){
+            return view('search.index', ['Vactures' => $data])->with('AllowAdd', 'true');
+        }
         return view('search.index', ['Vactures' => $data]);
     }
 
@@ -27,7 +32,17 @@ class Search extends Controller
      */
     public function create()
     {
-        return view('search.create');
+            X
+        $name = Auth::user()->name;
+        if($name != "Admin")
+        {
+            return redirect('/Search');
+        }
+        else
+        {
+            return view('search.create');
+        }
+        
     }
 
     /**
