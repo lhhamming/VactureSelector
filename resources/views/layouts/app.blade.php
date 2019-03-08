@@ -21,11 +21,11 @@
 </head>
 <body>
     <div id="app" >
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color:black;">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color:Gray;">
+            <div class="container" style="margin-top:10px;">
+                <a class="button is-dark" href="{{ url('/') }}">
                     <!--{{ config('app.name | ', 'Laravel | ') }}-->
-                    Vacture selector  |&nbsp&nbsp&nbsp&nbsp
+                    Vacture selector
                 </a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -38,7 +38,7 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
+                            <li class="nav-item button is-dark">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             
@@ -52,11 +52,11 @@
                             -->
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                     {{ Auth::user()->name }} <span class="caret">&nbsp&nbsp&nbsp</span>
+                                <a style="margin-left:5px; margin-right:10px;"id="navbarDropdown" class="nav-link dropdown-toggle button is-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <!--Logout Method -->
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">| &nbsp&nbsp&nbspLogout</a>
+                                <a class="button is-dark" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
                             </li>

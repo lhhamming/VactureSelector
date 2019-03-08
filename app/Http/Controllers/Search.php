@@ -65,8 +65,7 @@ class Search extends Controller
 
         $vacture->save();
 
-        $data = Vacture::all();
-        return view('search.index', ['Vactures' => $data]);
+        return redirect('/Search');
     }
 
     /**
